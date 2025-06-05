@@ -3,10 +3,63 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>투두리스트</title>
+    <title>To-Do_List</title>
     <link rel="stylesheet" href="./style/style.css" />
+    <link rel="stylesheet" href="./style/resset.css" />
 </head>
 <body>
-    <h1>업로드 테스트</h1>
+    <main class="main fcc">
+        <section class="top fcc">
+            <div class="date">2025 06 05</div>
+            <div class="time">18 : 25</div>
+        </section>
+        <section class="todobox">
+            <form class="todoForm flex_box">
+                <input type="text"/>
+                <button>Add task</button>
+            </form>
+            <ul class="filter_box frc">
+                <li><button class="active">전체</button></li>
+                <li><button>완료</button></li>
+                <li><button>미완료</button></li>
+            </ul>
+            <ul class="list_wrap">
+                <!-- 저장된 상태 -->
+                <li class="list flex_box">
+                    <div class="or"><p>복습하기</p></div>
+                    <div class="btn_box flex_box">
+                        <button class="btn finish">완료</button>
+                        <button class="btn rewrite">수정</button>
+                        <button class="btn elimination">삭제</button>
+                    </div>
+                </li>
+
+                <!-- 완료 한 상태 -->
+                <li class="list flex_box">
+                    <div class="or"><p class="finish_txt">아침 8시 40분 스크럼 하기</p></div>
+                    <div class="btn_box flex_box">
+                        <button class="btn f_cancel">완료취소</button>
+                        <button class="btn rewrite">수정</button>
+                        <button class="btn elimination">삭제</button>
+                    </div>
+                </li>
+
+                <!-- 수정 버튼 클릭 한 상태 -->
+                <li class="list flex_box">
+                    <div class="or">
+                        <form action="">
+                            <input type="text" value="책 읽기"/>
+                            
+                        </form>
+                    </div>
+                    <div class="btn_box flex_box">
+                        <button class="btn save">저장</button>
+                        <button class="btn elimination">삭제</button>
+                    </div>
+                </li>
+            </ul>
+            <div class="all_wrap"><button class="all">전체삭제</button></div>
+        </section>
+    </main>
 </body>
 </html>
