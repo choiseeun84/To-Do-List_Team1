@@ -104,6 +104,16 @@ body {
     font-weight: 500px;
 }
 
+.main .num {
+    padding: 0 20px;
+    margin-bottom: 8px;
+    text-align: right;
+    em{
+        font-weight: 500;
+        margin-right: 3px;
+    }
+}
+
 
 .main .list_wrap{
     padding: 0 20px;
