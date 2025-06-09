@@ -16,6 +16,7 @@ function removeList(e) {
     //console.log(e); //PointerEvent 객체
     //console.log(e.target); //PointerEvent 객체가 가르키는 요소
     e.target.closest('li').remove();
+    updateTodoCount();
 }
 
 // 전체 삭제 함수
@@ -25,6 +26,8 @@ function removeAll() {
     eliminationBtn.forEach(e => {
         e.closest('li').remove();
     });
+
+    updateTodoCount();
 }
 
 

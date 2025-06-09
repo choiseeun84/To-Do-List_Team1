@@ -1,0 +1,22 @@
+.clock {
+  display: flex;
+  text-align: center;
+  background: #1e4e2d;
+  color: white;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+#ampm {
+  font-size: 2rem;
+  margin-bottom: 0.2em;
+}
+
+.time {
+  font-size: 5rem;
+  font-weight: bold;
+}
+
+#date {
+  font-size: 1.8rem;
+  margin-top: 0.5em;
+}
