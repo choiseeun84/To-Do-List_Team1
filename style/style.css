@@ -1,6 +1,4 @@
-
 /* 공동 선택자 */
-
 .fcc{
     display: flex;
     flex-flow: column nowrap;
@@ -19,278 +17,248 @@
     justify-content: space-between; 
 }
 
-
+:root {
+    --primary-color: #4ee3a3;
+    --error-color: #f44336;
+    --background-color: #fafafa;
+    --text-primary: rgba(0, 0, 0, 0.87);
+    --text-secondary: rgba(0, 0, 0, 0.6);
+}
 
 body {
-    background: #2c2c2c;
-    /* color: #fff; */
-    box-sizing: border-box;
-    background-color: #F0EFE9;
+    background: var(--background-color);
+    color: var(--text-primary);
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-.main{
-    margin: 100px auto;
-    max-width: 900px;
+.main {
+    margin: 40px auto;
+    max-width: 800px;
     min-width: 400px;
-    height: 100vh;
-    justify-content: start;
+    min-height: 80vh;
     background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 24px;
 }
 
-.main section{ 
-    width: 100%; 
-}
-
-.main .top{
-    padding: 50px 0 20px;
-    font-size: 30px;
-    line-height: 1.5;
-    /* color: #000; */
-    font-weight: 500;
+.main .top {
+    padding: 32px 0;
     
-
-    .clock{
+    .clock {
         display: flex;
         flex-flow: row wrap;
-        align-items: end;
+        align-items: center;
         justify-content: center;
-        gap: 5px 20px;
+        gap: 8px;
     }
-    .time{
-        font-size: 65px;
-        font-weight: 600;
+    
+    .time {
+        font-size: 48px;
+        font-weight: 300;
+        color: var(--primary-color);
     }
-    #date{
+    
+    #ampm {
+        font-size: 16px;
+        color: var(--text-secondary);
+    }
+    
+    #date {
         width: 100%;
         text-align: center;
+        color: var(--text-secondary);
+        font-size: 18px;
+        margin-top: 8px;
     }
 }
 
-
-
-.main .todobox{
-    
+.main .todobox {
+    width: 95%;
 }
-
-.main .todoForm{
-    margin: 0 100px 30px;
+.todoForm {
+    margin: 24px 0;
     position: relative;
-    height: 50px;
+    height: 56px;
 }
 
-.main .todoForm .add_input{
+.add_input {
     width: 100%;
     height: 100%;
-    border-radius: 30px;
-    margin: 0;
-    padding: 0 0 0 15px;
-    border: none;
-    border: 2px solid #4EE3A3;
+    border-radius: 4px;
+    padding: 0 16px;
+    border: 1px solid rgba(0,0,0,0.23);
+    font-size: 16px;
+    transition: border-color 0.2s;
 }
 
-.main .todoForm .add_button{
-    height: 100%;
+.add_input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.add_button {
     position: absolute;
-    right: 0;
-    top: 0%;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
     color: #fff;
-    /* background-color: #4f4f4f; */
-    background-color: #4EE3A3;
-    border-radius: 30px;
-    width: 150px;
-    transition: 0.2s;
-    font-size: 18px;
+    background-color: var(--primary-color);
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: background-color 0.2s;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.main .todoForm .add_button:hover {
-    background: #000;
+.add_button:hover {
+    background-color: #1565c0;
 }
 
-.main .filter_box {
-    border-top: 1px solid #fff;
-    padding: 20px;
-    justify-content: end;
+.filter_box {
+    padding: 16px 0;
+    border-top: 1px solid rgba(0,0,0,0.12);
     gap: 8px;
 }
 
-.main .filter_box li button{
+.filter_box li button {
     font-size: 14px;
-    color: #000;
-    transition: 0.2s;
-    /* background-color: #fff; */
-    background-color: #E4EFE7;
-    padding: 5px 10px;
-    border-radius: 10px;
+    color: var(--text-secondary);
+    padding: 6px 12px;
+    border-radius: 16px;
+    transition: all 0.2s;
+    background: transparent;
 }
 
-.main .filter_box li button.active,
-.main .filter_box li button:hover{
-    /* background-color: #000; */
-    background-color: #4EE3A3;
-    color: #fff;
-    font-weight: 500px;
+.filter_box li button.active,
+.filter_box li button:hover {
+    background-color: var(--primary-color);
+    color: white;
 }
 
-.main .num {
-    padding: 0 20px;
-    margin-bottom: 8px;
-    text-align: right;
-    em{
+.num {
+    padding: 8px 0;
+    color: var(--text-secondary);
+    font-size: 14px;
+    
+    em {
+        color: var(--primary-color);
+        font-style: normal;
         font-weight: 500;
-        margin-right: 3px;
     }
 }
 
-
-.main .list_wrap{
-    padding: 0 20px;
+.list_wrap {
+    margin: 16px 0;
 }
 
-.main .list_wrap .list{
-    /* background: #000; */
-    /* background: #E4EFE7; */
-    /* border:1px solid #dadada; */
-    border-radius: 10px;
-    padding: 15px 10px;
-    border-radius: 3px;
-    flex-wrap: nowrap;
-    gap: 10px;
+.list {
+    padding: 16px;
+    transition: background-color 0.2s;
     align-items: center;
-
-    + .list {
-        /* margin-top: 15px; */
-        border-top: 1px solid #ddd;
-    }
-
-    
-}
-.main .list_wrap .list:hover{
-    /* background: #E4EFE7; */
-    background: #f2f7f4;
-    /* border:1px solid transparent; */
+    background: white;
 }
 
-.main .list_wrap .list .finish{
-    width: 25px; height: 25px;
-    background: no-repeat url(/style/icon_nucheck.png);
-    background-size: contain;
-        text-indent: -99999px;
-}
-.f_cancel{
-    width: 25px; height: 25px;
-    background: no-repeat url(/style/icon_check.png);
-    background-size: contain;
-        text-indent: -99999px;
+.list + .list {
+    border-top: 1px solid #ddd;
 }
 
-.main .list_wrap .list .or{
-    width: calc(100% - 115px);
-    box-sizing: border-box;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: start;
-    align-items: center;
+.list:hover {
+    background: rgba(0,0,0,0.02);
 }
 
-.main .list_wrap .list .or form{
+.list .or {
+    flex: 1;
+    margin: 0 16px;
+}
+
+.list .or p {
+    margin: 0;
+    font-size: 16px;
+    color: var(--text-primary);
+}
+
+.list .or .finish_txt {
+    color: var(--text-secondary);
+    text-decoration: line-through;
+}
+
+.list .or input {
     width: 100%;
-
-}
-.main .list_wrap .list .or input{
-    width: 90%;
-    height: 26px;
     box-sizing: border-box;
-    border: 1px solid #d7d7d7;
-    text-align: left;
-    padding: 10px;
-    border-radius: 3px;
+    padding: 8px;
+    border: 1px solid rgba(0,0,0,0.23);
+    border-radius: 4px;
+    font-size: 16px;
 }
 
-.main .list_wrap .list .or p{
-    width: 100%;
+.list .or input:focus {
+    border-color: var(--primary-color);
+    outline: none;
 }
 
-.main .list_wrap .list .or .finish_txt{
-    position: relative;
+.btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    padding: 8px;
+    transition: background-color 0.2s;
+    background-color: #fff;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    overflow: hidden;
+    text-indent: -9999px;
+}
 
+.btn:hover {
+    background-color: rgba(0,0,0,0.04);
+}
+
+.finish {
+    background-image: url('./icon_nucheck.png');
+}
+
+.f_cancel {
+    background-image: url('./icon_check.png');
+}
+
+.btn.rewrite {
+    background-image: url('./icon_write.png');
+}
+
+.btn.save {
+    background-image: url('./icon_upload.png');
+}
+
+.btn.elimination {
+    background-image: url('./icon_recyclebin.png');
+}
+
+.btn_box {
+    gap: 8px;
+}
+
+.all_wrap {
+    padding: 16px 0;
     
-}
-.main .list_wrap .list .or .finish_txt::after{
-    content: "";
-    display: block;
-    position: absolute;
-    width: 90%;
-    height: 1px;
-    background-color: #666;
-    top: 50%;
-    left: 0;
-}
-
-.main .list_wrap .list .btn_box{
-    /* width: 175px; */
-    justify-content: end;
-    gap: 0 10px;
-
-    .btn{
-        font-size: 14px;
+    button {
         color: #fff;
-        transition: 0.2s;
-        background-color: #fff;
-        padding: 3px 8px;
-        /* border-radius: 10px; */
+        font-size: 14px;
+        padding: 8px 16px;
+        border-radius: 4px;
+        transition: all 0.2s;
+        text-transform: uppercase;
+        font-weight: 500;
+        background-color: var(--error-color);
     }
-    .btn.rewrite{
-        width: 25px; height: 25px;
-        /* background-color: rgb(42, 42, 126); */
-        background: no-repeat url(/style/icon_write.png);
-        background-size: contain;
-        text-indent: -99999px;
-    }
-    .btn.save{
-        width: 25px; height: 25px;
-        /* background-color: rgb(35, 94, 35); */
-        background: no-repeat url(/style/icon_upload.png);
-        background-size: contain;
-        text-indent: -99999px;
-    }
-    .btn.elimination{
-        width: 25px; height: 25px;
-        /* background-color: rgb(184, 71, 71); */
-        background: no-repeat url(/style/icon_recyclebin.png);
-        background-size: contain;
-        text-indent: -99999px;
-    }
-    .btn.finish{
-        background-color: rgb(104, 42, 93);
-    }
-    .btn.f_cancel{
-        background-color: rgb(79, 18, 68);
-    }
-    /* .btn:hover{
-        background-color: #fff;
-        color:#000;
-    } */
-}
-
-.main .all_wrap {
-    padding: 20px 20px 0;
-    display: flex;
-    align-items: center;
-    justify-content: end;
     
-    button{
-        font-size: 14px;
-        /* color: #AE524D; */
-        color: #fff;
-        transition: 0.2s;
-        /* background-color: #fff; */
-        background-color: #FF616D;
-        padding: 5px 10px;
-        border-radius: 10px;
-    }
-    button:hover{
-        background-color: #AE524D;
-        /* color: #000; */
+    button:hover {
+        opacity: 0.8; 
     }
 }
-
