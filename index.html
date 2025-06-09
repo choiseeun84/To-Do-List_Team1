@@ -9,6 +9,7 @@
     <script src="./filter.js" defer></script>
     <script src="main.js" defer></script>
     <script src="./script.js" defer></script>
+    <script src="./list.js" defer></script>
     <link rel="icon" href="data:," />
   </head>
   <body>
@@ -18,16 +19,22 @@
         <div class="time">18 : 25</div>
       </section>
       <section class="todobox">
+
+      
         <form class="todoForm flex_box">
-          <input type="text" />
-          <button>Add task</button>
+          <input class="add_input" type="text" />
+          <button class="add_button">Add task</button>
         </form>
+
+
         <ul class="filter_box frc">
           <li><button class="active">전체</button></li>
           <li><button>완료</button></li>
           <li><button>미완료</button></li>
         </ul>
         <div class="num"><em>3</em>개</div>
+
+
         <ul class="list_wrap">
           <!-- 저장된 상태 -->
           <li class="list flex_box">
@@ -64,6 +71,9 @@
             </div>
           </li>
         </ul>
+
+
+
         <div class="all_wrap"><button class="all">전체삭제</button></div>
       </section>
     </main>
