@@ -28,6 +28,7 @@ function activeBtn() {
               }
             }
           }
+          updateTodoCount()
         }
       }
     });

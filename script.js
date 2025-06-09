@@ -1,5 +1,6 @@
 const listWrap = document.querySelector('.list_wrap');
 const todoCount = document.querySelector('.num em')
+const _filterBtn = document.querySelectorAll(".filter_box li > button");
 
 // 완료 토글 함수
 function finishToggle(e){
@@ -22,24 +23,46 @@ function finishToggle(e){
     btn.textContent = '완료'
     todoText.classList.remove('finish_txt');
   }
+
+  const activeBtn = [..._filterBtn].find(button => button.classList.contains('active'));
+  if (activeBtn) activeBtn.click();
+
   updateTodoCount();
+}
+
+
+// 필터 상태 확인 함수
+function getActiveFilter() {
+  if (_filterBtn[0].classList.contains('active')) {
+    return '전체';
+  } else if (_filterBtn[1].classList.contains('active')) {
+    return '완료';
+  } else if (_filterBtn[2].classList.contains('active')) {
+    return '미완료';
+  } else {
+    return '전체';
+  }
 }
 
 
 // 할 일 개수 표시 함수
 function updateTodoCount(){
   const todoItems = listWrap.querySelectorAll('.list');
-  let unfinishedCount = 0;
+  let count = 0;
+  const activeFilter = getActiveFilter();
 
   todoItems.forEach(item => {
     const todoText = item.querySelector('.or p');
-    if (todoText && !todoText.classList.contains('finish_txt')){
-      unfinishedCount++
+    if (activeFilter === '전체'){
+      count++;
+    }else if (activeFilter === '완료'){
+      if(todoText && todoText.classList.contains('finish_txt')) count++
+    }else if (activeFilter === '미완료'){
+      if(!todoText || !(todoText.classList.contains('finish_txt'))) count++
     }
   });
 
-  todoCount.textContent = unfinishedCount;
-
+  todoCount.textContent = count;
 }
 
 updateTodoCount();
