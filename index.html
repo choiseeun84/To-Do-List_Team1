@@ -6,16 +6,24 @@
     <title>To-Do_List</title>
     <link rel="stylesheet" href="./style/style.css" />
     <link rel="stylesheet" href="./style/resset.css" />
+    <link rel="style" href="./style//time.css" />
     <script src="./filter.js" defer></script>
     <script src="main.js" defer></script>
     <script src="./script.js" defer></script>
+    <script src="./time.js" defer></script>
     <link rel="icon" href="data:," />
   </head>
   <body>
     <main class="main fcc">
       <section class="top fcc">
-        <div class="date">2025 06 05</div>
-        <div class="time">18 : 25</div>
+        <div class="clock">
+          <div id="ampm">am</div>
+          <div class="time">
+            <span id="hour">00</span> :
+            <span id="minute">00</span>
+          </div>
+          <div id="date">01. Jan. 2025</div>
+        </div>
       </section>
       <section class="todobox">
         <form class="todoForm flex_box">
