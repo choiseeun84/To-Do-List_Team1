@@ -79,7 +79,7 @@ function rewriteToDoList(event, rewriteInput, rewriteArray, p, saveBtn) {
   const form = event.target.parentElement.parentElement.children[1].children[0];
   const rewriteText = rewriteInput.value;
 
-  if (rewriteText.trim() === " ") alert("ToDoList를 작성해주세요");
+  if (rewriteText.trim() === "") alert("ToDoList를 작성해주세요");
   else {
     p.textContent = rewriteText;
     form.replaceWith(p);
