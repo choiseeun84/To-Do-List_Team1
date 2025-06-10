@@ -4,11 +4,11 @@ const addBtn = document.querySelector(".add_button");
 const addInput = document.querySelector(".add_input");
 
 function handleTodoList() {
-//추가 버튼 눌렀을때
-addBtn.addEventListener("click", (e) => {
+  //추가 버튼 눌렀을때
+  addBtn.addEventListener("click", (e) => {
     e.preventDefault();
     createToDoListArray();
-});
+  });
 }
 
 function createToDoListArray() {
@@ -67,7 +67,7 @@ function rewriteValue(event) {
   rewriteInput.value = rewriteArray.value;
   rewriteBtn.replaceWith(saveBtn);
 
-  form.addEventListener("submit", function(e) {
+  form.addEventListener("submit", function (e) {
     e.preventDefault();
     rewriteToDoList(e, rewriteInput, rewriteArray, p);
   });
@@ -96,7 +96,7 @@ function makeSaveBtn(rewriteInput, rewriteArray, p) {
   saveBtn.addEventListener("click", (e) => {
     e.preventDefault();
     rewriteToDoList(e, rewriteInput, rewriteArray, p);
-});
+  });
   return saveBtn;
 }
 
