@@ -27,19 +27,23 @@ function removeList(e) {
     updateTodoCount();
 }
 
+
+
 // 전체 삭제 함수
 function removeAll() {
     const isRemove = confirm('전체 항목을 삭제하시겠습니까?');
-    
     if(!isRemove) return;
-
 
     const eliminationBtn = document.querySelectorAll('.elimination');
 
     eliminationBtn.forEach(e => {
-        e.closest('li').remove();
-        toDoListArray.splice(0);
+        if (e.closest('li').style.display !== 'none') {
+            e.closest('li').remove();
+            toDoListArray.splice(0);
+        }
     });
+
+
 
     updateTodoCount();
 }
