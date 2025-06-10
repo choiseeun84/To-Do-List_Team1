@@ -13,9 +13,12 @@ function handleClick() {
 
 // 개별 삭제 함수
 function removeList(e) {
+    const li = e.target.closest('li');
+    toDoListArray = toDoListArray.filter((item) => item.id !== parseInt(li.dataset.id));
     //console.log(e); //PointerEvent 객체
-    //console.log(e.target); //PointerEvent 객체가 가르키는 요소
-    e.target.closest('li').remove();
+    // console.log(e.target); //PointerEvent 객체가 가르키는 요소
+    li.remove();
+
     updateTodoCount();
 }
 
@@ -25,6 +28,7 @@ function removeAll() {
 
     eliminationBtn.forEach(e => {
         e.closest('li').remove();
+        toDoListArray.splice(0);
     });
 
     updateTodoCount();
