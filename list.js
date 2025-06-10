@@ -66,9 +66,14 @@ function rewriteValue(event) {
   rewriteInput.focus();
   rewriteInput.value = rewriteArray.value;
   rewriteBtn.replaceWith(saveBtn);
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+    rewriteToDoList(e, rewriteInput, rewriteArray, p);
+  });
 }
 
-function rewritToDiList(event, rewriteInput, rewriteArray, p) {
+function rewriteToDoList(event, rewriteInput, rewriteArray, p) {
   //수정된 ToDoList 출력
   const rewriteBtn = makeRewriteBtn();
   const form = event.target.parentElement.parentElement.children[1].children[0];
@@ -88,12 +93,9 @@ function makeSaveBtn(rewriteInput, rewriteArray, p) {
   //저장 버튼 생성
   const saveBtn = document.createElement("button");
   saveBtn.className = "btn save";
-  /* saveBtn.addEventListener("click", function (event) {
-    rewritToDiList(event, rewriteInput, rewriteArray, p);
-  }); */
   saveBtn.addEventListener("click", (e) => {
     e.preventDefault();
-    rewritToDiList(e, rewriteInput, rewriteArray, p);
+    rewriteToDoList(e, rewriteInput, rewriteArray, p);
 });
   return saveBtn;
 }
@@ -121,7 +123,6 @@ function makeFinishBtn() {
   //완료 버튼 생성
   const finishBtn = document.createElement("button");
   finishBtn.className = "btn finish";
-  //   finishBtn.addEventListener("click",);
   return finishBtn;
 }
 
