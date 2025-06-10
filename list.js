@@ -59,7 +59,7 @@ function rewriteValue(event) {
   const rewriteArray = toDoListArray.find((item) => item.id == li.dataset.id);
   const form = makeRewiteform();
   const rewriteInput = makeRewiteInput();
-  const saveBtn = makeSaveBtn(rewriteInput, rewriteArray, p);
+  const saveBtn = makeSaveBtn(rewriteInput, rewriteArray, p,);
 
   form.appendChild(rewriteInput);
   p.replaceWith(form);
@@ -69,15 +69,14 @@ function rewriteValue(event) {
 
   form.addEventListener("submit", function(e) {
     e.preventDefault();
-    rewriteToDoList(e, rewriteInput, rewriteArray, p);
+    rewriteToDoList(e, rewriteInput, rewriteArray, p, saveBtn);
   });
 }
 
-function rewriteToDoList(event, rewriteInput, rewriteArray, p) {
+function rewriteToDoList(event, rewriteInput, rewriteArray, p, saveBtn) {
   //수정된 ToDoList 출력
   const rewriteBtn = makeRewriteBtn();
   const form = event.target.parentElement.parentElement.children[1].children[0];
-  const saveBtn = event.target.parentElement.children[0];
   const rewriteText = rewriteInput.value;
 
   if (rewriteText.trim() === " ") alert("ToDoList를 작성해주세요");
@@ -95,7 +94,7 @@ function makeSaveBtn(rewriteInput, rewriteArray, p) {
   saveBtn.className = "btn save";
   saveBtn.addEventListener("click", (e) => {
     e.preventDefault();
-    rewriteToDoList(e, rewriteInput, rewriteArray, p);
+    rewriteToDoList(e, rewriteInput, rewriteArray, p, saveBtn);
 });
   return saveBtn;
 }
