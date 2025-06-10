@@ -45,24 +45,30 @@ body {
 }
 
 .main .top {
-    padding: 32px 0;
+    padding: 25px 0;
     
     .clock {
         display: flex;
         flex-flow: row wrap;
-        align-items: center;
+        align-items: end;
         justify-content: center;
-        gap: 8px;
+        gap: 5px 10px;
     }
     
     .time {
-        font-size: 48px;
+        font-size: 55px;
         font-weight: 300;
         color: var(--primary-color);
+        display: flex;
+        gap: 0 10px;
+
+        .colon {
+            animation: blink 1s step-start infinite;
+        }
     }
     
     #ampm {
-        font-size: 16px;
+        font-size: 18px;
         color: var(--text-secondary);
     }
     
@@ -70,10 +76,13 @@ body {
         width: 100%;
         text-align: center;
         color: var(--text-secondary);
-        font-size: 18px;
+        font-size: 20px;
         margin-top: 8px;
     }
 }
+
+@keyframes blink {50% {opacity: 0;}}
+
 
 .main .todobox {
     width: 95%;
@@ -141,7 +150,7 @@ body {
 }
 
 .num {
-    padding: 8px 0;
+    /* padding: 8px 0; */
     color: var(--text-secondary);
     font-size: 14px;
     
@@ -154,6 +163,8 @@ body {
 
 .list_wrap {
     margin: 16px 0;
+    height: 250px;
+    overflow-x: auto;
 }
 
 .list {
@@ -241,6 +252,7 @@ body {
 }
 
 .btn_box {
+    display: flex;
     gap: 8px;
 }
 
