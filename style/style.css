@@ -1,276 +1,283 @@
 /* 공동 선택자 */
-.fcc{
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    justify-content: center;
+.fcc {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
 }
-.frc{
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    justify-content: center;
+.frc {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
 }
-.flex_box { 
-    display: flex; 
-    flex-wrap: wrap; 
-    justify-content: space-between; 
+.flex_box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 :root {
-    --primary-color: #4ee3a3;
-    --error-color: #f44336;
-    --background-color: #fafafa;
-    --text-primary: rgba(0, 0, 0, 0.87);
-    --text-secondary: rgba(0, 0, 0, 0.6);
+  --primary-color: #4ee3a3;
+  --error-color: #f44336;
+  --background-color: #fafafa;
+  --text-primary: rgba(0, 0, 0, 0.87);
+  --text-secondary: rgba(0, 0, 0, 0.6);
+}
+
+* {
+  font-family: "Noto Sans KR", sans-serif;
 }
 
 body {
-    background: var(--background-color);
-    color: var(--text-primary);
-    font-family: "Noto Sans KR", sans-serif;
-    margin: 0;
-    padding: 0;
+  background: var(--background-color);
+  color: var(--text-primary);
+  font-family: "Noto Sans KR", sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 .main {
-    margin: 40px auto;
-    max-width: 800px;
-    min-width: 400px;
-    min-height: 80vh;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    padding: 24px;
+  margin: 40px auto;
+  max-width: 800px;
+  min-width: 400px;
+  min-height: 80vh;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 24px;
 }
 
 .main .top {
-    padding: 25px 0;
-    
-    .clock {
-        display: flex;
-        flex-flow: row wrap;
-        align-items: end;
-        justify-content: center;
-        gap: 5px 10px;
-    }
-    
-    .time {
-        font-size: 55px;
-        font-weight: 300;
-        color: var(--primary-color);
-        display: flex;
-        gap: 0 10px;
+  padding: 25px 0;
 
-        .colon {
-            animation: blink 1s step-start infinite;
-        }
+  .clock {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: end;
+    justify-content: center;
+    gap: 5px 10px;
+  }
+
+  .time {
+    font-size: 55px;
+    font-weight: 300;
+    color: var(--primary-color);
+    display: flex;
+    gap: 0 10px;
+
+    .colon {
+      animation: blink 1s step-start infinite;
     }
-    
-    #ampm {
-        font-size: 18px;
-        color: var(--text-secondary);
-    }
-    
-    #date {
-        width: 100%;
-        text-align: center;
-        color: var(--text-secondary);
-        font-size: 20px;
-        margin-top: 8px;
-    }
+  }
+
+  #ampm {
+    font-size: 18px;
+    color: var(--text-secondary);
+  }
+
+  #date {
+    width: 100%;
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 20px;
+    margin-top: 8px;
+  }
 }
 
-@keyframes blink {50% {opacity: 0;}}
-
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
 
 .main .todobox {
-    width: 95%;
+  width: 95%;
 }
 .todoForm {
-    margin: 24px 0;
-    position: relative;
-    height: 56px;
+  margin: 24px 0;
+  position: relative;
+  height: 56px;
 }
 
 .add_input {
-    width: 100%;
-    height: 100%;
-    border-radius: 4px;
-    padding: 0 16px;
-    border: 1px solid rgba(0,0,0,0.23);
-    font-size: 16px;
-    transition: border-color 0.2s;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  padding: 0 16px;
+  border: 1px solid rgba(0, 0, 0, 0.23);
+  font-size: 16px;
+  transition: border-color 0.2s;
 }
 
 .add_input:focus {
-    border-color: var(--primary-color);
-    outline: none;
+  border-color: var(--primary-color);
+  outline: none;
 }
 
 .add_button {
-    position: absolute;
-    right: 8px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #fff;
-    background-color: var(--primary-color);
-    border-radius: 4px;
-    padding: 8px 16px;
-    font-size: 14px;
-    font-weight: 500;
-    text-transform: uppercase;
-    transition: background-color 0.2s;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
+  background-color: var(--primary-color);
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: background-color 0.2s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .add_button:hover {
-    background-color: #1565c0;
+  background-color: #1565c0;
 }
 
 .filter_box {
-    padding: 16px 0;
-    border-top: 1px solid rgba(0,0,0,0.12);
-    gap: 8px;
+  padding: 16px 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  gap: 8px;
 }
 
 .filter_box li button {
-    font-size: 14px;
-    color: var(--text-secondary);
-    padding: 6px 12px;
-    border-radius: 16px;
-    transition: all 0.2s;
-    background: transparent;
+  font-size: 14px;
+  color: var(--text-secondary);
+  padding: 6px 12px;
+  border-radius: 16px;
+  transition: all 0.2s;
+  background: transparent;
 }
 
 .filter_box li button.active,
 .filter_box li button:hover {
-    background-color: var(--primary-color);
-    color: white;
+  background-color: var(--primary-color);
+  color: white;
 }
 
 .num {
-    /* padding: 8px 0; */
-    color: var(--text-secondary);
-    font-size: 14px;
-    
-    em {
-        color: var(--primary-color);
-        font-style: normal;
-        font-weight: 500;
-    }
+  /* padding: 8px 0; */
+  color: var(--text-secondary);
+  font-size: 14px;
+
+  em {
+    color: var(--primary-color);
+    font-style: normal;
+    font-weight: 500;
+  }
 }
 
 .list_wrap {
-    margin: 16px 0;
-    height: 250px;
-    overflow-x: auto;
+  margin: 16px 0;
+  height: 250px;
+  overflow-x: auto;
 }
 
 .list {
-    padding: 16px;
-    transition: background-color 0.2s;
-    align-items: center;
-    background: white;
+  padding: 16px;
+  transition: background-color 0.2s;
+  align-items: center;
+  background: white;
 }
 
 .list + .list {
-    border-top: 1px solid #ddd;
+  border-top: 1px solid #ddd;
 }
 
 .list:hover {
-    background: rgba(0,0,0,0.02);
+  background: rgba(0, 0, 0, 0.02);
 }
 
 .list .or {
-    flex: 1;
-    margin: 0 16px;
+  flex: 1;
+  margin: 0 16px;
 }
 
 .list .or p {
-    margin: 0;
-    font-size: 16px;
-    color: var(--text-primary);
+  margin: 0;
+  font-size: 16px;
+  color: var(--text-primary);
 }
 
 .list .or .finish_txt {
-    color: var(--text-secondary);
-    text-decoration: line-through;
+  color: var(--text-secondary);
+  text-decoration: line-through;
 }
 
 .list .or input {
-    width: 100%;
-    box-sizing: border-box;
-    padding: 8px;
-    border: 1px solid rgba(0,0,0,0.23);
-    border-radius: 4px;
-    font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.23);
+  border-radius: 4px;
+  font-size: 16px;
 }
 
 .list .or input:focus {
-    border-color: var(--primary-color);
-    outline: none;
+  border-color: var(--primary-color);
+  outline: none;
 }
 
 .btn {
-    width: 36px;
-    height: 36px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    padding: 8px;
-    transition: background-color 0.2s;
-    background-color: #fff;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 20px;
-    overflow: hidden;
-    text-indent: -9999px;
+  width: 36px;
+  height: 36px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  padding: 8px;
+  transition: background-color 0.2s;
+  background-color: #fff;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 20px;
+  overflow: hidden;
+  text-indent: -9999px;
 }
 
 .btn:hover {
-    background-color: rgba(0,0,0,0.04);
+  background-color: rgba(0, 0, 0, 0.04);
 }
 
 .finish {
-    background-image: url('./icon_nucheck.png');
+  background-image: url("./icon_nucheck.png");
 }
 
 .f_cancel {
-    background-image: url('./icon_check.png');
+  background-image: url("./icon_check.png");
 }
 
 .btn.rewrite {
-    background-image: url('./icon_write.png');
+  background-image: url("./icon_write.png");
 }
 
 .btn.save {
-    background-image: url('./icon_upload.png');
+  background-image: url("./icon_upload.png");
 }
 
 .btn.elimination {
-    background-image: url('./icon_recyclebin.png');
+  background-image: url("./icon_recyclebin.png");
 }
 
 .btn_box {
-    display: flex;
-    gap: 8px;
+  display: flex;
+  gap: 8px;
 }
 
 .all_wrap {
-    padding: 16px 0;
-    
-    button {
-        color: #fff;
-        font-size: 14px;
-        padding: 8px 16px;
-        border-radius: 4px;
-        transition: all 0.2s;
-        text-transform: uppercase;
-        font-weight: 500;
-        background-color: var(--error-color);
-    }
-    
-    button:hover {
-        opacity: 0.8; 
-    }
+  padding: 16px 0;
+
+  button {
+    color: #fff;
+    font-size: 14px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: all 0.2s;
+    text-transform: uppercase;
+    font-weight: 500;
+    background-color: var(--error-color);
+  }
+
+  button:hover {
+    opacity: 0.8;
+  }
 }
