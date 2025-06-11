@@ -3,8 +3,6 @@ let toDoListArray = [];
 const addBtn = document.querySelector(".add_button");
 const addInput = document.querySelector(".add_input");
 
-
-
 function handleTodoList() {
   //추가 버튼 눌렀을때
   addBtn.addEventListener("click", (e) => {
@@ -51,6 +49,19 @@ function printAddList(toDoListObj) {
   btnDiv.appendChild(eliminationBtn);
   li.appendChild(btnDiv);
   ul.appendChild(li);
+
+  if (toDoListObj.check === true) {
+    finishBtn.classList.remove("finish");
+    finishBtn.classList.add("f_cancel");
+    finishBtn.textContent = "완료취소";
+    p.classList.add("finish_txt");
+  } else {
+    finishBtn.classList.remove("f_cancel");
+    finishBtn.classList.add("finish");
+    finishBtn.textContent = "완료";
+    p.classList.remove("finish_txt");
+  }
+
   updateTodoCount();
 }
 
@@ -182,8 +193,8 @@ function makeEliminationBtn() {
 }
 
 function init() {
-    getLocalStorage();
-    handleTodoList();
+  getLocalStorage();
+  handleTodoList();
 }
 
 init();
