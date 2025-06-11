@@ -174,6 +174,28 @@ body {
   overflow-x: auto;
 }
 
+/* 스크롤바 전체 */
+.list_wrap::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* 스크롤 트랙 (배경) */
+.list_wrap::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+/* 스크롤 핸들 (움직이는 바) */
+.list_wrap::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+
+/* 마우스 hover 시 스크롤 핸들 색상 변경 */
+.list_wrap::-webkit-scrollbar-thumb:hover {
+  background: #aaa;
+}
+
 .list {
   padding: 16px;
   transition: background-color 0.2s;
