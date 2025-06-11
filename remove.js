@@ -25,6 +25,7 @@ function removeList(e) {
 
 
     updateTodoCount();
+    setLocalStorage();
 }
 
 // 전체 삭제 함수
@@ -42,6 +43,7 @@ function removeAll() {
     });
 
     updateTodoCount();
+    setLocalStorage();
 }
 
 
