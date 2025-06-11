@@ -20,10 +20,12 @@ function createToDoListArray() {
     const toDoListObj = {
       id: Date.now(),
       value: item,
+      check: false,
     };
     addInput.value = "";
     toDoListArray.push(toDoListObj);
     printAddList(toDoListObj);
+    setLocalStorage();
   }
 }
 
@@ -47,14 +49,37 @@ function printAddList(toDoListObj) {
   btnDiv.appendChild(eliminationBtn);
   li.appendChild(btnDiv);
   ul.appendChild(li);
+
+  if (toDoListObj.check === true) {
+    finishBtn.classList.remove("finish");
+    finishBtn.classList.add("f_cancel");
+    finishBtn.textContent = "완료취소";
+    p.classList.add("finish_txt");
+  } else {
+    finishBtn.classList.remove("f_cancel");
+    finishBtn.classList.add("finish");
+    finishBtn.textContent = "완료";
+    p.classList.remove("finish_txt");
+  }
+
   updateTodoCount();
 }
+
+/* function isCheck(e, btn) {
+    const li = e.target.closest('li');
+  const checkArray = toDoListArray.find((item) => item.id == li.dataset.id);
+const checkValue = checkArray.check;
+  if(checkValue === true) {
+    btn = 
+  }
+} */
 
 function rewriteValue(event) {
   //수정하는 입력창 생성
   const li = event.target.parentElement.parentElement;
   const p = event.target.parentElement.parentElement.children[1].children[0];
   const rewriteBtn = event.target.parentElement.children[0];
+  const finishBtn = event.target.parentElement.parentElement.children[0];
 
   const rewriteArray = toDoListArray.find((item) => item.id == li.dataset.id);
   const form = makeRewiteform();
@@ -66,6 +91,7 @@ function rewriteValue(event) {
   rewriteInput.focus();
   rewriteInput.value = rewriteArray.value;
   rewriteBtn.replaceWith(saveBtn);
+  finishBtn.disabled = true;
 
   form.addEventListener("submit", function (e) {
     e.preventDefault();
@@ -78,6 +104,7 @@ function rewriteToDoList(event, rewriteInput, rewriteArray, p, saveBtn) {
   const rewriteBtn = makeRewriteBtn();
   const form = event.target.parentElement.parentElement.children[1].children[0];
   const rewriteText = rewriteInput.value;
+  const finishBtn = event.target.parentElement.parentElement.children[0];
 
   if (rewriteText.trim() === "") alert("ToDoList를 작성해주세요");
   else {
@@ -85,6 +112,8 @@ function rewriteToDoList(event, rewriteInput, rewriteArray, p, saveBtn) {
     form.replaceWith(p);
     rewriteArray.value = rewriteText;
     saveBtn.replaceWith(rewriteBtn);
+    finishBtn.disabled = false;
+    setLocalStorage();
   }
 }
 
@@ -163,4 +192,9 @@ function makeEliminationBtn() {
   return eliminationBtn;
 }
 
-handleTodoList();
+function init() {
+  getLocalStorage();
+  handleTodoList();
+}
+
+init();

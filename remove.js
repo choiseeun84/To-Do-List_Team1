@@ -25,6 +25,7 @@ function removeList(e) {
 
 
     updateTodoCount();
+    setLocalStorage();
 }
 
 
@@ -46,6 +47,7 @@ function removeAll() {
 
 
     updateTodoCount();
+    setLocalStorage();
 }
 
 
